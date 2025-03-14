@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Style Previewer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        #preview {
+            margin: 20px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            font-size: 24px; /* Initial font size */
+        }
+
+        input, select {
+            margin: 10px;
+            padding: 5px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Font Style Previewer</h1>
+    <div id="preview">Sample text</div>
+    <input type="text" id="userText" placeholder="Type your text here">
+    <select id="fontFamily">
+        <option value="Arial">Arial</option>
+        <option value="Verdana">Verdana</option>
+        <option value="Times New Roman">Times New Roman</option>
+    </select>
+    <select id="fontWeight">
+        <option value="normal">Normal</option>
+        <option value="bold">Bold</option>
+        <option value="100">Light</option>
+    </select>
+    <select id="fontStyle">
+        <option value="normal">Normal</option>
+        <option value="italic">Italic</option>
+    </select>
+    <script>
+        document.getElementById('userText').addEventListener('input', function () {
+            document.getElementById('preview').textContent = this.value || "Sample text";
+        });
+
+        document.getElementById('fontFamily').addEventListener('change', function () {
+            document.getElementById('preview').style.fontFamily = this.value;
+        });
+
+        document.getElementById('fontWeight').addEventListener('change', function () {
+            document.getElementById('preview').style.fontWeight = this.value;
+        });
+
+        document.getElementById('fontStyle').addEventListener('change', function () {
+            document.getElementById('preview').style.fontStyle = this.value;
+        });
+    </script>
+</body>
+</html>
